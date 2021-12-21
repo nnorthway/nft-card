@@ -1,0 +1,107 @@
+$softBlue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$mainBG: hsl(217, 54%, 11%);
+$cardBG: hsl(216, 50%, 16%);
+$border: hsl(215, 32%, 27%);
+
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  font-size: 18px;
+  font-family: 'Outfit', Arial, Helvetica, sans-serif;
+  background-color: $mainBG;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .card {
+    max-width: 352px;
+    background-color: $cardBG;
+    padding: 1.33em;
+    border-radius: 0.66em;
+    box-shadow: 0 0 100px 30px rgba(0,0,0,.3);
+    .card-image {
+      max-width: 100%;
+      a {
+        img {
+          border-radius: 0.66em;
+          position: relative;
+          max-width: 100%;
+        }
+        .filter {
+          display: none;
+        }
+        &:hover,
+        &:focus,
+        &:focus-visible {
+          color: #fff;
+          .filter {
+            display: block;
+            border-radius: 0.66em;
+            position: absolute;
+            background: rgba($cyan, .5);
+            background-image: url(../images/icon-view.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+    .card-body {
+      .card-title {
+        display: block;
+        font-size: 1.3em;
+        margin: 1em 0;
+      }
+      p {
+        font-weight: 300;
+        color: $softBlue;
+      }
+    }
+    .card-footer {
+      border-top: 1px solid $border;
+      img {
+        height: 2em;
+        margin-right: 1em;
+        border: 1px solid white;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  &:hover,
+  &:focus-visible,
+  &:focus {
+    color: $cyan;
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &.justify-start {
+    justify-content: flex-start;
+  }
+  &.justify-between {
+    justify-content: space-between;
+  }
+}
+
+.has-color-cyan {
+  color: $cyan !important;
+}
+
+.has-color-softblue {
+  color: $softBlue;
+}
+
+svg {
+  margin-right: .3em;
+}
